@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'codegenerator';
   date = new Date();
-  codeGenerated = '';
-  evtMsg: any;
+  codeGenerated = ''; // for 10 digit code
+  inputcodeGenerated = ''; // for any digit code
   randomString() {
  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz';
  const stringLength = 10;
@@ -20,5 +20,15 @@ export class AppComponent {
 }
  this.codeGenerated = randomstring;
  return 0;
+}
+randominputString(maxValue: number) {
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz';
+  let randominputstring = '';
+  for (let i = 0; i < maxValue; i++) {
+    const rnum = Math.floor(Math.random() * chars.length);
+    randominputstring += chars.substring(rnum, rnum + 1);
+  }
+  this.inputcodeGenerated = randominputstring;
+  return 0;
 }
 }

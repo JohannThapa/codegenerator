@@ -1,12 +1,29 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <div class="card text-center" style="width: 40rem;">
+  <div class="row" style="margin-top:50px;">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="card text-center" style="width: 50rem;">
       <div class="card-head">
-        <button (click)="randomString()" class="d-inline bg-primary btn-lg text-white">Generate code</button>
+        <button (click)="randomString()" class="btn draw-border d-inline bg-none btn-lg">Generate 10 digit code</button>
       </div>
       <div class="card-body">
-        <h1 class="display-2 text-dark">{{codeGenerated}}</h1>
+        <div class="border w-80" style="height: 100px;">
+        <h1 class="display-3 text-dark">{{codeGenerated}}</h1>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <div class="card text-center" style="width: 50rem;">
+      <div class="card-head">
+          <div class="form-group d-flex justify-content-center">
+              <input type="number" class="form-control" style="width: 50%;" id="inputnumber" placeholder="Enter Maximum digit" #maxValue>
+            </div>
+      </div>
+      <div class="card-body">
+        <h1 class="display-3 text-dark">{{inputcodeGenerated}}</h1>
+      </div>
+      <div class="card-footer">
+        <button (click)="randominputString(maxValue.value)" type="submit" class="btn draw-border d-inline bg-none btn-lg">Generate code</button>
       </div>
       </div>
     </div>
